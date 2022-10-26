@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import {Context} from "../Contex";
 import Item from "../components/Item";
-import DiscountCounter from "../components/discountCounter";
+
 
 
 function Homepage() {
@@ -15,7 +15,6 @@ function Homepage() {
 
     return (
         <main className="homepage">
-            <DiscountCounter />
             <div className="grid-items-container">
                 {items}
             </div>

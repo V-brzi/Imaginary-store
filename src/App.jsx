@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/Imaginary-store" element={<Home />} />
         <Route exact path="/homepage" element={<Homepage />} />
         <Route exact path="/favorites" element={<Favorites />} />
         <Route exact path="/cart" element={<Cart />} />

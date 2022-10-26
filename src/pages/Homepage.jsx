@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { Context } from "../Contex";
+import React, {useContext} from "react";
+import {Context} from "../Contex";
 import Item from "../components/Item";
 import DiscountCounter from "../components/discountCounter";
 

@@ -50,7 +50,7 @@ function isCart(){
       className="card"
       onMouseEnter={() => setShowIcons(true)}
       onMouseLeave={() => setShowIcons(false)}
-      data-trigger="focus">
+      onClick={(e) => e.stopPropagation()}>
         
       <Card.Img variant="top" src={product.image} className="card-img"/>
       <Info 

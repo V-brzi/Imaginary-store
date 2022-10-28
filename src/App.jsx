@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Router>
+      <Router basename={'/subdirectory'}>
           <Route exact path="/Imaginary-store" element={<Home />} />
           <Route path="/store" element={<Store />} />
           <Route path="/favorites" element={<Favorites />} />

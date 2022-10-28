@@ -26,7 +26,7 @@ function Info({product}) {
 
 
     return (
-        <div ref={thisRef}>
+        <div ref={thisRef} onClick={(e) => e.stopPropagation()}>
         <i className="fa-solid fa-circle-info fa-lg" onClick={handleClick}></i>
 
         <Overlay

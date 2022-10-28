@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.scss";
 import Header from "./components/Header";
-import Homepage from "./pages/Homepage";
+import Store from "./pages/Store";
 import Favorites from "./pages/Favorites";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
@@ -14,8 +14,8 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route exact path="/Imaginary-store" element={<Home />} />
-        <Route exact path="/homepage" element={<Homepage />} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/store" element={<Store />} />
         <Route exact path="/favorites" element={<Favorites />} />
         <Route exact path="/cart" element={<Cart />} />
       </Routes>

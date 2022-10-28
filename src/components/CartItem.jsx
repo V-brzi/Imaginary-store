@@ -14,7 +14,7 @@ function CartItem({cartItem}){
             onClick={() => removeFrom(cartItem, setCartItems)}></i>
             <img src={cartItem.image} className="cart-item-img" alt="cart item image" />
         </div>
-        <p className="cart-item-price">{cartItem.price} $</p>
+        <p className="cart-item-price">{cartItem.price.toFixed(2)} $</p>
     </div>
 )}
 

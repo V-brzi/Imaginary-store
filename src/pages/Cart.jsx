@@ -41,16 +41,16 @@ function Cart() {
                 {displayCartItems}
                 {getDiscount() > 0 ?
                 <div className="total-price">
-                    <h5 className="old-price">{totalPrice} $</h5>
-                    <h5 className="new-price">Total: {getDiscount()} $</h5>
+                    <h5 className="old-price">{totalPrice.toFixed(2)} $</h5>
+                    <h5 className="new-price">Total: {getDiscount().toFixed(2)} $</h5>
                 </div> :
-                <h5 className="total-price">Total: {totalPrice} $</h5>
+                <h5 className="total-price">Total: {totalPrice.toFixed(2)} $</h5>
                 }
                 <button className="check-out">Check out</button>    
             </> : 
-            <>
-                <h1 className="empty-message">Cart is empty.</h1>
-            </>
+            <div className="empty-message">
+                <h1>Cart is empty.</h1>
+            </div>
             }
         </main>
     )

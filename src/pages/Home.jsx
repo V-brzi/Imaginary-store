@@ -5,7 +5,7 @@ function Home(){
     return(
         <main className="home">
             <h2 className="home-title">Welcome to imaginary store</h2>
-            <Link to="/homepage" className="link">
+            <Link to="/store" className="link">
                 <img 
                 src="https://cdn-images.zety.com/pages/retail_cover_letter_example_zety_uk_2.jpg"
                 alt="home-img" 

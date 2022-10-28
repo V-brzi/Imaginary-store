@@ -13,7 +13,9 @@ function Favorites() {
     return (
         <main className="favorites">
             {favorites.length > 0 ? displayFavorites : 
-            <h1 className="empty-message">Favorites list is empty.</h1>}
+            <div className="empty-message">
+                <h1>Favorites list is empty.</h1>
+            </div>}
         </main>
     )
 }

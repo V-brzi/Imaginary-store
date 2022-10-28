@@ -4,7 +4,7 @@ import Item from "../components/Item";
 import DiscountCounter from "../components/DiscountCounter";
 
 
-function Homepage() {
+function Store() {
 
     const { products } = useContext(Context);
 
@@ -14,7 +14,7 @@ function Homepage() {
     /> ));
 
     return (
-        <main className="homepage">
+        <main className="store">
             <DiscountCounter />
             <div className="grid-items-container">
                 {items}
@@ -23,4 +23,4 @@ function Homepage() {
     );
 }
 
-export default Homepage;
+export default Store;

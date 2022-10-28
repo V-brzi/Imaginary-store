@@ -15,11 +15,6 @@ function Item({product}) {
         cartItems,
         setCartItems} = useContext(Context);
 
-  function toggleIcons(){
-    setShowIcons(!showIcons);
-};
-
-
 function isFavorite(){
 
   const containsFav = favorites?.some(item => item.id === product.id);
@@ -53,8 +48,8 @@ function isCart(){
   return (
     <Card 
       className="card"
-      onMouseEnter={toggleIcons}
-      onMouseLeave={toggleIcons}
+      onMouseEnter={() => setShowIcons(true)}
+      onMouseLeave={() => setShowIcons(false)}
       data-trigger="focus">
         
       <Card.Img variant="top" src={product.image} className="card-img"/>

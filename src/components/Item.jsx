@@ -50,7 +50,7 @@ function isCart(){
       className="card"
       onMouseEnter={() => setShowIcons(true)}
       onMouseLeave={() => setShowIcons(false)}
-      onTouchStart={(e) => e.stopPropagation()}
+      onTouchStart={() => setShowIcons(true)}
       >
         
       <Card.Img variant="top" src={product.image} className="card-img"/>

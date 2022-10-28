@@ -5,7 +5,7 @@ import Store from "./pages/Store";
 import Favorites from "./pages/Favorites";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
-import {Switch, Route} from "react-router-dom";
+import {Router, Switch, Route} from "react-router-dom";
 
 
 function App() {
@@ -13,12 +13,14 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Switch>
-        <Route exact path="/Imaginary-store" element={<Home />} />
-        <Route path="/store" element={<Store />} />
-        <Route path="/favorites" element={<Favorites />} />
-        <Route path="/cart" element={<Cart />} />
-      </Switch>
+      <Router>
+        <Switch>
+          <Route exact path="/Imaginary-store" element={<Home />} />
+          <Route path="/store" element={<Store />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/cart" element={<Cart />} />
+        </Switch>
+      </Router>
     </div>
   )
 }

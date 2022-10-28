@@ -5,7 +5,7 @@ import Store from "./pages/Store";
 import Favorites from "./pages/Favorites";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
-import {Router, Switch, Route} from "react-router-dom";
+import {Router, Route} from "react-router-dom";
 
 
 function App() {
@@ -14,12 +14,10 @@ function App() {
     <div className="App">
       <Header />
       <Router>
-        <Switch>
           <Route exact path="/Imaginary-store" element={<Home />} />
           <Route path="/store" element={<Store />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/cart" element={<Cart />} />
-        </Switch>
       </Router>
     </div>
   )

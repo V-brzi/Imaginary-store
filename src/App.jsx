@@ -5,7 +5,7 @@ import Store from "./pages/Store";
 import Favorites from "./pages/Favorites";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
-import {Router, Route} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 
 
 function App() {
@@ -13,12 +13,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Router basename={'/subdirectory'}>
+      <Routes basename={'/subdirectory'}>
           <Route exact path="/Imaginary-store" element={<Home />} />
           <Route path="/store" element={<Store />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/cart" element={<Cart />} />
-      </Router>
+      </Routes>
     </div>
   )
 }

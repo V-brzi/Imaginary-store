@@ -45,16 +45,12 @@ function isCart(){
   )
 };
 
-  function show(e){
-    e.stopPropagation();
-    setShowIcons(true);
-  };
-
   return (
     <Card 
       className="card"
-      onMouseEnter={show}
+      onMouseEnter={() => setShowIcons(true)}
       onMouseLeave={() => setShowIcons(false)}
+      onTouchStart={(e) => e.stopPropagation()}
       >
         
       <Card.Img variant="top" src={product.image} className="card-img"/>

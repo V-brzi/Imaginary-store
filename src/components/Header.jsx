@@ -13,14 +13,14 @@ function Header() {
     if(favorites.length > 0){
       return (
         <div className='nav-stats'>
-          <Link to="/favorites" className="nav-link"><i className="fa-solid fa-heart fa-xl"></i></Link>
+          <Link to="/Imaginary-store/favorites" className="nav-link"><i className="fa-solid fa-heart fa-xl"></i></Link>
           <span className='nav-fav-num'>{favorites.length}</span>
         </div>
       )
     }
     else return (
       <div className='nav-stats'>
-          <Link to="/favorites" className="nav-link"><i className="fa-regular fa-heart fa-xl"></i></Link>
+          <Link to="/Imaginary-store/favorites" className="nav-link"><i className="fa-regular fa-heart fa-xl"></i></Link>
       </div>
     )
   }
@@ -29,13 +29,13 @@ function Header() {
     if(cartItems.length > 0){
       return(
       <div className='nav-stats'>
-      <Link to="/cart" className="nav-link"><i className="fa-solid fa-cart-shopping fa-xl"></i></Link>
+      <Link to="/Imaginary-store/cart" className="nav-link"><i className="fa-solid fa-cart-shopping fa-xl"></i></Link>
       <span className='nav-cart-num'>{cartItems.length}</span>
       </div>
       )}
     else return (
       <div className='nav-stats'>
-        <Link to="/cart" className="nav-link"><i className="fa-brands fa-opencart fa-xl"></i></Link>
+        <Link to="/Imaginary-store/cart" className="nav-link"><i className="fa-brands fa-opencart fa-xl"></i></Link>
       </div>
     )
   }
@@ -43,11 +43,11 @@ function Header() {
   return (
     <Navbar className="nav">
         <Container className="nav-container">
-            <Link to="/" className="nav-title">
+            <Link to="/Imaginary-store" className="nav-title">
               Im<i className="fa-solid fa-house fa-s"></i>ginary store 
             </Link>
             <Nav className="nav-links">
-                <Link to="/store" className="nav-link"><i className="fa-solid fa-store fa-xl"></i></Link>
+                <Link to="/Imaginary-store/store" className="nav-link"><i className="fa-solid fa-store fa-xl"></i></Link>
                 {favoritesStat()}
                 {cartItemsStat()}
             </Nav>

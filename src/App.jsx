@@ -14,10 +14,10 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/store" element={<Store />} />
-        <Route exact path="/favorites" element={<Favorites />} />
-        <Route exact path="/cart" element={<Cart />} />
+        <Route exact path="/Imaginary-store" element={<Home />} />
+        <Route exact path="/Imaginary-store/store" element={<Store />} />
+        <Route exact path="/Imaginary-store/favorites" element={<Favorites />} />
+        <Route exact path="/Imaginary-store/cart" element={<Cart />} />
       </Routes>
     </div>
   )

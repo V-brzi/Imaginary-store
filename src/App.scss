@@ -28,11 +28,15 @@ body{
 .App{
   width: 100vw;
   height: 100vh;
+  overflow-y: scroll;
 }
 
 // Navbar styles //
 .nav{
   display: flex;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
   width: 100vw;
   height: var(--navH);
   padding: 0 1rem;

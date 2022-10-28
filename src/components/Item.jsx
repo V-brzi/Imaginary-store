@@ -27,7 +27,7 @@ function isFavorite(){
       <i 
       className="fa-regular fa-heart fa-lg" 
       onClick={() => addTo(product,setFavorites)}></i>
-)}
+)};
 
 function isCart(){
 
@@ -43,14 +43,19 @@ function isCart(){
       className="fa-brands fa-opencart fa-lg" 
       onClick={() => addTo(product,setCartItems)}></i>
   )
-}
+};
+
+  function show(e){
+    e.stopPropagation();
+    setShowIcons(true);
+  };
 
   return (
     <Card 
       className="card"
-      onMouseEnter={() => setShowIcons(true)}
+      onMouseEnter={show}
       onMouseLeave={() => setShowIcons(false)}
-      onClick={(e) => e.stopPropagation()}>
+      >
         
       <Card.Img variant="top" src={product.image} className="card-img"/>
       <Info 

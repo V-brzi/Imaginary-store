@@ -15,9 +15,9 @@ function App() {
       <Header />
       <Routes>
         <Route exact path="/Imaginary-store" element={<Home />} />
-        <Route exact path="/Imaginary-store/store" element={<Store />} />
-        <Route exact path="/Imaginary-store/favorites" element={<Favorites />} />
-        <Route exact path="/Imaginary-store/cart" element={<Cart />} />
+        <Route path="/store" element={<Store />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>
   )

@@ -43,7 +43,7 @@ function Header() {
   return (
     <Navbar className="nav">
         <Container className="nav-container">
-            <Link to="/Imaginary-store" className="nav-title">
+            <Link to="/" className="nav-title">
               Im<i className="fa-solid fa-house fa-s"></i>ginary store 
             </Link>
             <Nav className="nav-links">

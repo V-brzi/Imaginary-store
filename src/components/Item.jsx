@@ -7,7 +7,6 @@ import {Context} from "../Contex";
 
 function Item({product}) {
 
-  const[showIcons, setShowIcons] = useState(false);
   const{favorites, 
         addTo, 
         removeFrom,
@@ -19,11 +18,10 @@ function isFavorite(){
 
   const containsFav = favorites?.some(item => item.id === product.id);
 
-      return (containsFav ? showIcons && 
+      return (containsFav ? 
       <i 
       className="fa-solid fa-heart fa-lg" 
       onClick={() => removeFrom(product,setFavorites)}></i> :
-      showIcons && 
       <i 
       className="fa-regular fa-heart fa-lg" 
       onClick={() => addTo(product,setFavorites)}></i>
@@ -34,11 +32,10 @@ function isCart(){
   const containsCart = cartItems?.some(item => item.id === product.id);
   
   return(
-    containsCart ? showIcons && 
+    containsCart ? 
       <i 
       className="fa-solid fa-cart-shopping fa-lg" 
       onClick={() => removeFrom(product,setCartItems)}></i> :
-      showIcons && 
       <i 
       className="fa-brands fa-opencart fa-lg" 
       onClick={() => addTo(product,setCartItems)}></i>
@@ -46,12 +43,7 @@ function isCart(){
 };
 
   return (
-    <Card 
-      className="card"
-      onMouseEnter={() => setShowIcons(true)}
-      onMouseLeave={() => setShowIcons(false)}
-      onTouchStart={() => setShowIcons(true)}
-      >
+    <Card className="card">
         
       <Card.Img variant="top" src={product.image} className="card-img"/>
       <Info 

@@ -20,7 +20,7 @@ function Cart() {
     return (
         <main className="cart">
             {cartItems.length > 0 ?
-            <>
+            <div className="cart-content">
                 <Carousel slides = {slides} />
                 {displayCartItems}
                 <div className="total-price">
@@ -31,7 +31,7 @@ function Cart() {
                 <Link to="/billing">
                     <button className="check-out-btn">Check out</button>  
                 </Link>  
-            </> : 
+            </div> : 
             <div className="empty-message">
                 <h1>Cart is empty.</h1>
             </div>

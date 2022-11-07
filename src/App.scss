@@ -333,6 +333,7 @@ body{
     width: fit-content;
     align-self: center;
     background-color: var(--cp5);
+    color: var(--cp2);
     margin-bottom: 2rem;
     border: none;
   }
@@ -444,6 +445,7 @@ body{
 
     .purchase-btn{
       background-color: var(--cp5);
+      color: var(--cp2);
       border: none;
     }
   }
@@ -454,7 +456,6 @@ body{
     justify-content: center;
     width:100vw;
     height: calc(100vh - var(--navH));
-    animation: slide .8s ease-out;
   }
 }
 // -- //
@@ -464,7 +465,6 @@ body{
 .favorites,
 .billing{
   width: 100vw;
-  animation: slide .8s ease-out;
 }
 
 .store,
@@ -577,17 +577,6 @@ input[type=chackbox]:checked{
   background-color: var(--cp2);
 }
 
-@keyframes slide {
-  0%{
-    transform: translateY(100%);
-    opacity: 0%
-  }
-  100%{
-    transform: translateY(0%);
-    opacity: 100%
-  }
-}
-
 @keyframes motion {
   0%{
     transform: translateX(100%);
@@ -605,7 +594,7 @@ input[type=chackbox]:checked{
 
 // -- //
 
-// Media querie styles //
+// Media queries styles //
 @media(max-width:520px){
   :root{
     --fs1: 1rem;

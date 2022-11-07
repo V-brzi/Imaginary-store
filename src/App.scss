@@ -275,7 +275,7 @@ body{
   margin: 0 auto;
   width: 75vw;
   animation: slide .8s ease-out;
-  overflow:  hidden;
+  overflow-x:  hidden;
 
   .carousel-container{
     align-self: flex-start;

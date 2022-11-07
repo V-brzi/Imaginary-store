@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import Rating from "./Rating";
-import { Context } from "../Contex";
+import { Context } from "../Context";
 
 
 function FavoritesItem({favorite}){

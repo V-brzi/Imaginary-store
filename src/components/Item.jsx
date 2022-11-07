@@ -1,7 +1,7 @@
 import React, {useState, useContext} from "react";
 import Card from 'react-bootstrap/Card';
 import Info from "./Info";
-import {Context} from "../Contex";
+import {Context} from "../Context";
 
 
 

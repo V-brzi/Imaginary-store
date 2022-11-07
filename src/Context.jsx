@@ -8,6 +8,14 @@ function ContextProvider({children}){
     const[favorites, setFavorites] = useState([]);
     const[cartItems, setCartItems] = useState([]);
     const[discount, setDiscount] = useState(0);
+    const[basePrice, setBasePrice] = useState(0);
+    
+
+    useEffect(() => {
+        fetch('https://fakestoreapi.com/products')
+            .then(res=>res.json())
+            .then(json=>setProducts(json))
+    },[]);
 
     function addTo(product,name){
         name(oldArray => [...oldArray, product]);
@@ -35,10 +43,26 @@ function ContextProvider({children}){
         }
 
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
-            .then(res=>res.json())
-            .then(json=>setProducts(json))
-    },[]);
+        let newPrice = 0;
+        cartItems && cartItems.forEach(cartItem => {
+            newPrice = newPrice + cartItem.price
+            setBasePrice(newPrice);
+    })}, [cartItems]);
+
+    function getDiscount(){
+        let totalPrice = basePrice;
+        if(discount > 0){
+            totalPrice = basePrice * discount
+        }else{
+            if(totalPrice >= 300){
+                totalPrice = basePrice * 0.9;
+            }
+            else if(totalPrice >= 600){
+                totalPrice = basePrice * 0.8;
+            };
+        }
+        return totalPrice;
+    };
 
     return(
         <Context.Provider value={{
@@ -47,9 +71,11 @@ function ContextProvider({children}){
             favorites,
             cartItems,
             discount,
+            basePrice,
             setFavorites,
             setCartItems,
             setDiscount,
+            getDiscount,
             addTo,
             removeFrom}}>
             {children}

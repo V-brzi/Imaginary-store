@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react';
 import Confetti from 'react-confetti';
-import {Context} from '../Contex';
+import {Context} from '../Context';
 
 function DiscountCounter(){
 

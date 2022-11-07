@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Context } from "../Contex";
+import { Context } from "../Context";
 import FavoritesItem from "../components/FavoritesItem";
 
 function Favorites() {

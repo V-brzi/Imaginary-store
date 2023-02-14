@@ -1,1 +1,5 @@
 /* No CSS *//*# sourceMappingURL=App.css.map */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

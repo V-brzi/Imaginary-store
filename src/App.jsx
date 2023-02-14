@@ -6,6 +6,8 @@ import Favorites from "./pages/Favorites";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Billing from "./pages/Billing";
+import Login from "./pages/Login";
+import SignUp from "./pages/Signup";
 import {Routes, Route} from "react-router-dom";
 
 
@@ -20,6 +22,8 @@ function App() {
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/billing" element={<Billing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
       </Routes>
     </div>
   )

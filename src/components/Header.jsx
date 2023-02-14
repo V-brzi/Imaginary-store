@@ -13,6 +13,7 @@ function Header() {
     if(favorites.length > 0){
       return (
         <div className='nav-stats'>
+          
           <Link to="/favorites" className="nav-link"><i className="fa-solid fa-heart fa-xl"></i></Link>
           <span className='nav-fav-num'>{favorites.length}</span>
         </div>
@@ -21,6 +22,7 @@ function Header() {
     else return (
       <div className='nav-stats'>
           <Link to="/favorites" className="nav-link"><i className="fa-regular fa-heart fa-xl"></i></Link>
+          
       </div>
     )
   }
@@ -47,6 +49,7 @@ function Header() {
               Im<i className="fa-solid fa-house fa-s"></i>ginary store 
             </Link>
             <Nav className="nav-links">
+                <Link to="/Login" className="nav-link"><i class="fa-solid fa-user fa-xl"></i></Link>
                 <Link to="/store" className="nav-link"><i className="fa-solid fa-store fa-xl"></i></Link>
                 {favoritesStat()}
                 {cartItemsStat()}

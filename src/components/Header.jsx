@@ -49,7 +49,7 @@ function Header() {
               Im<i className="fa-solid fa-house fa-s"></i>ginary store 
             </Link>
             <Nav className="nav-links">
-                <Link to="/Login" className="nav-link"><i class="fa-solid fa-user fa-xl"></i></Link>
+                <Link to="/Login" className="nav-link"><i className="fa-solid fa-user fa-xl"></i></Link>
                 <Link to="/store" className="nav-link"><i className="fa-solid fa-store fa-xl"></i></Link>
                 {favoritesStat()}
                 {cartItemsStat()}

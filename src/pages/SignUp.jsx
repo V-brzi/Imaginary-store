@@ -1,9 +1,41 @@
 import React from 'react'
 import "./Login.css"
-
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import {Link} from "react-router-dom";
+import app from '../firebase';
+import { useState } from 'react';
 
 const SignUp = () => {
+
+    const auth = getAuth(app);
+
+    // create a useState for email and password
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    // signup function 
+
+    const signup = () => {
+         
+        
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            console.log(user);
+            alert('User created successfully')
+            // ...
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            // const errorMessage = error.message;
+            // ..
+
+            alert(errorCode);
+          });
+
+    }
 
   return (
     
@@ -14,17 +46,17 @@ const SignUp = () => {
       <div>
         <div className='mt-3'>
           <label>Email</label>
-          <input type="text" placeholder="Enter email" />
+          <input type="text" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} />
           
         </div>
 
         <div className='mt-3'>
           <label>Password</label>
-          <input type="password" placeholder="Enter password" />
+          <input type="password" placeholder="Enter password" onChange={(e) => setPassword(e.target.value)}/>
           
         </div>
 
-        <button className='mt-3 btn-colr' type='submit'>Sign Up</button>
+        <button onClick={signup} className='mt-3 btn-colr' type='submit'>Sign Up</button>
       </div> 
 
       <div>

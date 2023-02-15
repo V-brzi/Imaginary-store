@@ -37,7 +37,7 @@ function Info({product}) {
             containerPadding={20}
         >
             <Popover id="popover-contained" className="popover-contained">
-                <Popover.Header as="h3"><strong>Product details:</strong></Popover.Header>
+                <Popover.Header as="h3" className='popover-header'><strong>Product details:</strong></Popover.Header>
                 <Popover.Body className="popover-body">
                     <div>
                         <strong>About:</strong> {product.description}

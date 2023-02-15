@@ -48,7 +48,7 @@ function isCart(){
       <Card.Img variant="top" src={product.image} className="card-img"/>
       <Info 
       product={product}/>
-      <Card.Body>
+      <Card.Body className="card-text">
         <Card.Title className="product-title">{product.title}</Card.Title>
         <Card.Text>
           {product.price} $

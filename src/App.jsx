@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Billing from "./pages/Billing";
 import Login from "./pages/Login";
-import SignUp from "./pages/Signup";
+import SignUp from "./pages/SignUp";
 import {Routes, Route} from "react-router-dom";
 
 

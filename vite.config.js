@@ -7,6 +7,6 @@ export default defineConfig({
   base: '/Imaginary-store/',
   resolve: {
     modules: ['node_modules'],
-    extensions: ['.js', '.jsx', '.ts', '.tsx', ...]
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
 })

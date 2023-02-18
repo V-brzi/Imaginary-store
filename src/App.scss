@@ -176,10 +176,10 @@ body{
     margin: 0 auto;
     padding: 1rem 0 1rem 0;
     border-radius: 2rem;
-    font-weight: bold;
   
     .discount-message{
       font-weight: 400;
+      padding: .5rem 0;
     }
     
     .confetti{
@@ -195,11 +195,42 @@ body{
     }
   
     .countdown-timer{
-    margin: 0 auto;
+      margin: 0 auto;
+      .timer-components-container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .timer-component{
+          display: flex;
+          justify-content: center;
+          padding: .5rem 1rem;
+          min-width: 22%;
+          color: var(--cp1);
+          background-color: var(--cp2);
+          font-weight: bold;
+          span{
+            color: var(--cp1);
+            letter-spacing: .05rem;
+          }
+          .time-left{
+            font-weight: bold;
+            animation: counter-animation 1s ease-in-out;
+          }
+        }
+      }
+    }
+
+    @keyframes counter-animation {
+      0%{
+        transform: scale(0);
+      }
+      50%{
+        transform: scale(1);
+      }
     }
   
     hr{
-      margin: 1rem 0;
+      margin-top: 1.8rem;
     }
   }
   
@@ -244,7 +275,8 @@ body{
     font-size: var(--fs2);
 
     .product-title{
-      color: var(--cp3)
+      color: var(--cp3);
+      font-size: var(--fs1);
     }
 
     .favorites-icons{
@@ -362,6 +394,7 @@ body{
     .summary-title{
       padding: 1rem 0;
       background-color: #f5f5f5;
+      font-size: var(--fs1);
     }
 
     .summary-content{
@@ -398,13 +431,12 @@ body{
     width: 55%;
     margin-bottom: 2rem;
     
-    
-
     .details-title{
       width: 100%;
       padding: 1rem 0;
       margin-bottom: 1rem;
       background-color: #f5f5f5;
+      font-size: var(--fs1);
     }
 
     .form-input{
@@ -743,10 +775,6 @@ input[type=chackbox]:checked{
     }
   }
 
-  .product-title{
-    font-size: var(--fs1);
-  }
-
   .cart{
     .cart-content{
       width: 90%;
@@ -898,8 +926,35 @@ input[type=chackbox]:checked{
 
   .favorites,
   .cart{
-    margin-top: 8rem;
+    margin-top: 12rem;
+  }
+
+  .favorites{
+
+    .favorite-img{
+      max-width: 250px;
+      max-height: 300px;
+      min-height: 250px;
+    }
+  }
+
+  .cart{
+    .cart-content{
+      width: 80%;
+      .cart-item{
+        .cart-container{
+          .cart-item-img{
+            width: 220px;
+            height: 200px;
+          }
+        }
+      }
+    }
   }
   
+  .billing{
+    margin: 0 auto;
+    width: 80vw;
+  }
 
 }

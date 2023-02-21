@@ -204,7 +204,7 @@ body{
           display: flex;
           justify-content: center;
           padding: .5rem 1rem;
-          min-width: 22%;
+          width: 22%;
           color: var(--cp1);
           background-color: var(--cp2);
           font-weight: bold;
@@ -455,7 +455,13 @@ body{
       display: flex;
       justify-content: space-around;
       margin-bottom: 1rem;
+
       
+      .checkbox-container{
+        font-size: var(--fs2);
+        text-align: center;
+      }
+
       input{
         cursor: pointer;
       }
@@ -706,6 +712,7 @@ input[type=chackbox]:checked{
       .confetti{
         width: 75%
       }
+
     }
   }
 
@@ -871,6 +878,10 @@ input[type=chackbox]:checked{
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
       grid-auto-flow: dense;
     }
+
+    .discount-countdown{
+      margin-bottom: 2rem;
+    }
   }
 
   .card{
@@ -924,9 +935,10 @@ input[type=chackbox]:checked{
     height: 30px;
   }
 
+  .store,
   .favorites,
   .cart{
-    margin-top: 12rem;
+    margin-top: 8rem;
   }
 
   .favorites{
@@ -955,6 +967,11 @@ input[type=chackbox]:checked{
   .billing{
     margin: 0 auto;
     width: 80vw;
+    .card-type{
+      input{
+          margin-bottom: 1rem;
+      }
+    }
   }
 
 }

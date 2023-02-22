@@ -4,8 +4,11 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import {Link} from "react-router-dom";
 import app from '../firebase';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
+
+  const navigate = useNavigate();
 
     const auth = getAuth(app);
 
@@ -24,7 +27,7 @@ const SignUp = () => {
             // Signed in 
             const user = userCredential.user;
             console.log(user);
-            alert('User created successfully')
+            navigate('/store');
             // ...
           })
           .catch((error) => {

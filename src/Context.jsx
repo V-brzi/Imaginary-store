@@ -1,4 +1,8 @@
 import React,{useState, useEffect} from "react";
+import {app, db} from './firebase';
+import { setDoc, getDoc, doc } from 'firebase/firestore'
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
 
 const Context = React.createContext()
 
@@ -9,23 +13,63 @@ function ContextProvider({children}){
     const[cartItems, setCartItems] = useState([]);
     const[discount, setDiscount] = useState(0);
     const[basePrice, setBasePrice] = useState(0);
-    
+    const[currentUser, setCurrentUser] = useState("");
+
+    const auth = getAuth(app);   
 
     useEffect(() => {
+
+        if(currentUser !== ""){
+            const docRef = doc(db, "users", currentUser);
+
+            getDoc(docRef)
+            .then( docSnap => {
+                if(docSnap){
+                    setFavorites(docSnap.data().favorites.map(favorite => favorite));
+                    setCartItems(docSnap.data().cart.map(cartItem => cartItem));
+                }
+            })
+        } else {
+            setFavorites([]);
+            setCartItems([]);
+        }
+    }, [currentUser])
+
+
+    useEffect(() => {
+        if(currentUser) {
+            setDoc(doc(db, 'users', currentUser), {
+                favorites: [...favorites],
+                cart: [...cartItems]
+            });
+        };
+    }, [favorites, cartItems]);
+
+
+    useEffect(() => {
+
+        onAuthStateChanged(auth, (user) => {
+            if(user !== null){
+                setCurrentUser(user.uid)
+            };
+        });
+
         fetch('https://fakestoreapi.com/products')
             .then(res=>res.json())
             .then(json=>setProducts(json))
     },[]);
 
-    function addTo(product,name){
-        name(oldArray => [...oldArray, product]);
+    //This function is used in Item.jsx, CartItem.jsx and FavoritesItem.jsx files
+    // to add products to favorites/cartItems
+    function addTo(product, setName){
+        setName(oldArray => [...oldArray, product]);
     };
-
-    function removeFrom(product,name){
-        name(oldArray => oldArray.filter(oldProduct => {
-            return oldProduct !== product;
+    //This function is used in Item.jsx, CartItem.jsx and FavoritesItem.jsx files to 
+    //remove products from favorites/cartItems
+    function removeFrom(product,setName){
+        setName(oldArray => oldArray.filter(oldProduct => {
+            return oldProduct.id !== product.id;
         }));
-        console.log(favorites);
     };
 
     function listenForOutsideClicks(listening, setListening, thisRef, setShow) {
@@ -67,17 +111,18 @@ function ContextProvider({children}){
     return(
         <Context.Provider value={{
             products, 
-            listenForOutsideClicks, 
             favorites,
             cartItems,
             discount,
             basePrice,
+            currentUser,
             setFavorites,
             setCartItems,
             setDiscount,
             getDiscount,
             addTo,
-            removeFrom}}>
+            removeFrom,
+            listenForOutsideClicks}}>
             {children}
         </Context.Provider>
     )

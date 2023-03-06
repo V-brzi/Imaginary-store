@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./Login.css"
 import {Link} from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import app from '../firebase';
+import {app} from '../firebase';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -18,17 +18,15 @@ const Login = () => {
   const [password, setPassword] = useState('');
 
 
-
   const signin = () => {
 
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      // Signed in 
-      const user = userCredential.user;
-      console.log(user);
-      
+
+       // Signed in 
+       const user = userCredential.user;
        navigate('/store');
-      // ...
+       // ...
     })
     .catch((error) => {
       const errorCode = error.code;

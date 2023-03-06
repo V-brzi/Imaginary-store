@@ -42,8 +42,6 @@ function DiscountCounter(){
         }, 1000);
     });
 
-    console.log(timeLeft)
-
     return (
         <div className='discount-countdown'>
             {!birthdayMessage  ? 

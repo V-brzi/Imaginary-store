@@ -2,9 +2,11 @@ import React from 'react'
 import "./Login.css"
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import {Link} from "react-router-dom";
-import app from '../firebase';
+import {app, db} from '../firebase';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { setDoc, doc } from 'firebase/firestore'
+
 
 const SignUp = () => {
 
@@ -20,15 +22,19 @@ const SignUp = () => {
   
 
     const signup = () => {
-         
-        
         createUserWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
-            // Signed in 
+
+             // Signed in 
             const user = userCredential.user;
             console.log(user);
             navigate('/store');
             // ...
+
+            setDoc(doc(db,'users', userCredential.user.uid),{
+              favorites: [],
+              cart: []
+            })
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -37,7 +43,6 @@ const SignUp = () => {
 
             alert(errorCode);
           });
-
     }
 
   return (

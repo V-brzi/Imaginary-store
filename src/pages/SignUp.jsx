@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Login.css"
+import "./Login.scss"
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import {Link} from "react-router-dom";
 import {app, db} from '../firebase';
@@ -66,6 +66,8 @@ const SignUp = () => {
 
         <button onClick={signup} className='mt-3 btn-colr' type='submit'>Sign Up</button>
       </div> 
+
+      <hr className='mt-4' />
 
       <div>
             <p className='text-black text-center mt-3'>have an account? <span className='text-white-700 font-semibold'><Link to="/login">Login</Link></span></p>

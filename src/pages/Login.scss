@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import '../styles/variables.scss';
 
 
 .l-cont {
@@ -12,13 +13,9 @@
     height: 85vh;
 }
 
-hr {
-    margin-top: 3;
-}
-
 .sm-cont {
     width: 24rem;
-    
+    color: $cp2;
     border-radius: 0.375rem; /* 6px */
     padding: 1.5rem; /* 24px */
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -43,8 +40,9 @@ input {
 
 
 
-.btn-colr {
-    background-color:#0cb623;
+.btn-colr,
+.btn-disbl {
+    background-color: $cp3;
     width: 100%;
     border-radius: 0.375rem; /* 6px */
     padding-top: 0.25rem; /* 4px */
@@ -52,10 +50,14 @@ input {
 }
 
 .btn-colr:hover {
-    background-color: #4CAF50; /* Green */
-    color: white;
+    background-color: $cp5; /* Green */
+    color: $cp2;
   }
 
+  .btn-sign-out{
+    background-color: $cp2;
+    color: $cp1;
+  }
 
   span {
     color: #0cb623;

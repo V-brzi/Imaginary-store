@@ -116,6 +116,7 @@ function ContextProvider({children}){
             discount,
             basePrice,
             currentUser,
+            setCurrentUser,
             setFavorites,
             setCartItems,
             setDiscount,

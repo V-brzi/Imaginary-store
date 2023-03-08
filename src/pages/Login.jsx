@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
-import "./Login.css"
+import "./Login.scss"
 import {Link} from "react-router-dom";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import {app} from '../firebase';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Context } from '../Context';
 
 const Login = () => {
 
@@ -16,6 +17,7 @@ const Login = () => {
   
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const {currentUser, setCurrentUser} = useContext(Context);
 
 
   const signin = () => {
@@ -35,6 +37,17 @@ const Login = () => {
     });
   }
 
+  const signUserOut = () => {
+      signOut(auth).then(() => {
+      // Sign-out successful.
+      setCurrentUser("")
+      navigate('/store');
+    }).catch((error) => {
+      // An error happened.
+      const errorCode = error.code;
+      alert(errorCode);
+    });
+  }
   return (
     
     <div className='l-cont'>
@@ -54,13 +67,20 @@ const Login = () => {
           
         </div>
 
+        {currentUser !== "" ? 
+        <button disabled className='mt-3 btn-disbl' type='submit'>Login</button> : 
         <button onClick={signin} className='mt-3 btn-colr' type='submit'>Login</button>
+        }
       </div> 
 
-      <div>
+      <hr className='mt-4' />
 
-            <p className='text-black text-center mt-3'>Don't have an account? <span className='text-white-700 font-semibold'><Link to="/SignUp">Sign up</Link></span></p>
-         </div>
+      <div>
+        {currentUser == "" ?
+        <p className='text-black text-center mt-1'>Don't have an account? <span className='text-white-700 font-semibold'><Link to="/SignUp">Sign up</Link></span></p> :
+        <button onClick={signUserOut} className='mt-1 py-1 text-sm btn-sign-out'>Sign out&nbsp;<i className="fa-solid fa-right-from-bracket"></i></button>
+        }
+      </div>
 
       </div>
 

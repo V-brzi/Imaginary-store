@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import "./Login.scss"
+import '../styles/Login.scss';
 import {Link} from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import {app} from '../firebase';

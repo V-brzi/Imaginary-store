@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../Context";
 import FavoritesItem from "../components/FavoritesItem";
+import "../styles/Favorites.scss"
 
 function Favorites() {
 

@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import {Context} from "../Context";
 import Item from "../components/Item";
 import DiscountCounter from "../components/DiscountCounter";
+import "../styles/Store.scss";
 
 
 function Store() {

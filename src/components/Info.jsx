@@ -2,7 +2,8 @@ import React, {useState, useRef, useContext, useEffect} from 'react';
 import Overlay from 'react-bootstrap/Overlay';
 import Popover from 'react-bootstrap/Popover';
 import Rating from './Rating';
-import {Context} from '../Context'
+import {Context} from '../Context';
+import "../styles/Info.scss";
 
 function Info({product}) {
 

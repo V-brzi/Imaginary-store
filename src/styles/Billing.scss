@@ -1,0 +1,166 @@
+@import './Variables.scss';
+
+.billing{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 100vw;
+    margin-top: 1.5rem;
+
+    .summary{
+        width: 35%;
+
+        .summary-title{
+            padding: 1rem 0;
+            background-color: #f5f5f5;
+            font-size: var(--fs1);
+        }
+
+        .summary-content{
+            text-align: start;
+
+            div{
+                display: flex;
+                justify-content: space-between;
+            }
+
+            div:nth-child(2){
+                margin-bottom: 1rem;
+                border-bottom: 1px solid var(--cp5);
+            }
+        }
+
+        img{
+            max-width: 80%;
+        }
+    }
+
+    .summary,
+    .billing-form{
+        box-shadow: 0px 0px 15px 1px #e2e2e2;
+        -webkit-box-shadow: 0px 0px 15px 1px #e2e2e2;
+        -moz-box-shadow: 0px 0px 15px 1px #e2e2e2;
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+
+    .billing-form{
+        display: flex;
+        flex-direction: column;
+        width: 55%;
+        margin-bottom: 2rem;
+
+        .details-title{
+            width: 100%;
+            padding: 1rem 0;
+            margin-bottom: 1rem;
+            background-color: #f5f5f5;
+            font-size: var(--fs1);
+        }
+
+        .form-input{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.5rem;
+        }
+
+        span{
+            color: red;
+            font-size: small;
+            display: none;
+        }
+
+        .card-type{
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 1rem;
+
+        
+            .checkbox-container{
+                font-size: var(--fs2);
+                text-align: center;
+            }
+
+            input{
+                cursor: pointer;
+            }
+        }
+
+        input,
+        input::placeholder{
+            text-align: center;
+        }
+
+        input:invalid[focused="true"]{
+            border: 1px solid red;
+        }
+
+        input:invalid[focused="true"] ~ span{
+            display:block;
+        }
+
+        .date-cvc{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+
+            div{
+                width: 40%;
+            }
+        }
+
+        .purchase-btn{
+            background-color: var(--cp5);
+            color: var(--cp2);
+            border: none;
+        }
+    }
+
+    .order-closed{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:100vw;
+        height: calc(100vh - var(--navH));
+    }
+}
+
+input[type=checkbox]:checked{
+    color: var(--cp3);
+    background-color: var(--cp2);
+}
+
+@media(max-width:520px){
+
+    .billing{
+        flex-direction: column;
+        align-items: center;
+
+        .summary{
+            width: 80%;
+        }
+
+        .billing-form{
+            width: 90%;
+        }
+    }
+    
+    .order-closed{
+        img{
+            width: 100%;
+        }
+    }
+}
+
+@media(min-width:1500px){
+    
+    .billing{
+        margin: 0 auto;
+        width: 80vw;
+        .card-type{
+            input{
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

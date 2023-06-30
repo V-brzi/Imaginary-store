@@ -2,8 +2,7 @@ import React, {useContext} from "react";
 import Card from 'react-bootstrap/Card';
 import Info from "./Info";
 import {Context} from "../Context";
-
-
+import "../styles/Item.scss";
 
 function Item({product}) {
 

@@ -1,0 +1,80 @@
+@import './Variables.scss';
+
+.popover-header{
+    font-size: medium;
+}
+
+.popover-contained{
+    font-size: small;
+}
+
+.details-middle{
+    margin: .5rem 0;
+}
+
+.stars-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs2);
+    font-weight: bold;
+    width: 100%;
+}
+
+.fa-circle-info{
+    position: absolute;
+    color: var(--cp3);
+    top: 15px;
+    left: 5px;
+}
+
+.fa-circle-info:hover{
+    cursor: pointer;
+}
+
+.fa-trash-can{
+    cursor: pointer;
+}
+
+.outer-star{
+    margin: 3px;
+    width: 25px;
+    height: 20px;
+    background-color: var(--cp2);
+}
+
+.inner-star{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: orange;
+}
+
+.outer-star{
+    -webkit-clip-path: polygon(50% 0%, 65% 35%, 100% 40%, 70% 60%, 85% 100%, 50% 75%, 15% 100%, 30% 60%, 0 40%, 35% 35%);
+    clip-path: polygon(50% 0%, 65% 35%, 100% 40%, 70% 60%, 85% 100%, 50% 75%, 15% 100%, 30% 60%, 0 40%, 35% 35%);
+}
+
+@media(min-width:1500px){
+
+    .popover-header{
+        font-size: 1.8rem;
+    }
+    
+    .popover-contained{
+        font-size: 1.5rem;
+    }
+
+    .popover-header,
+    .popover-body{
+        width: 400px;
+    }
+
+    .outer-star{
+        margin: 5px;
+        width: 40px;
+        height: 30px;
+    }
+}

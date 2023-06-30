@@ -1,11 +1,11 @@
-import React from 'react'
-import "./Login.scss"
+import React from 'react';
+import "../styles/Login.scss";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import {Link} from "react-router-dom";
 import {app, db} from '../firebase';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { setDoc, doc } from 'firebase/firestore'
+import { setDoc, doc } from 'firebase/firestore';
 
 
 const SignUp = () => {

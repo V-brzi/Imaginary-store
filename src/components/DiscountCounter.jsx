@@ -4,7 +4,7 @@ import {Context} from '../Context';
 
 function DiscountCounter(){
 
-    const [year, setYear] = useState(2023);
+    const [year, setYear] = useState(2024);
     const {setDiscount} = useContext(Context);
 
     const calculateTimeLeft = () => {
@@ -21,7 +21,7 @@ function DiscountCounter(){
                 s: Math.floor((difference / 1000) % 60).toString().split("")
             };
         }
-        else if(difference === 0){
+        else if(difference <= 0){
             setDiscount(0.25);
             setBirthdayMessage(true);
             setTimeout(() => {
@@ -41,6 +41,7 @@ function DiscountCounter(){
             setTimeLeft(calculateTimeLeft());
         }, 1000);
     });
+
 
     return (
         <div className='discount-countdown'>
@@ -79,7 +80,7 @@ function DiscountCounter(){
                 <h2 className='birthday-message'>🎉Enjoy our birthday fire sale🎉</h2>
                 <hr />
                 <h4>All products are on 75% discount !</h4>
-            </div>}
+            </div>} 
         </div>
         )
 }

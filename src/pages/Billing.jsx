@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import BillingForm from "../components/BillingForm";
 import {Context} from "../Context";
+import "../styles/Billing.scss";
 
 function Billing(){
 

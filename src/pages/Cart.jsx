@@ -3,6 +3,7 @@ import {Context} from "../Context";
 import {Link} from "react-router-dom"
 import CartItem from "../components/CartItem";
 import Carousel from "../components/Carousel";
+import "../styles/Cart.scss"
 
 function Cart() {
 

@@ -1,4 +1,4 @@
-@import './Variables.scss';
+@use 'variables' as v;
 
 .cart{
     display: flex;

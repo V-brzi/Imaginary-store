@@ -1,8 +1,8 @@
-@import 'variables';
+@use 'variables' as v;
+@import 'mixin';
 
 .store{
-    font-size: var(--fs2);
-    font-family: var(--ff1);
+    @include responsive-fs2 ("font-size");
 
     .discount-countdown{
         display: flex;
@@ -27,7 +27,7 @@
             font-style: oblique;
             font-weight: bold;
             margin: 0;
-            color: var(--cp2);
+            color: v.$cp2;
         }
     
         .countdown-timer{
@@ -41,11 +41,11 @@
                     justify-content: center;
                     padding: .5rem 1rem;
                     width: 22%;
-                    color: var(--cp1);
-                    background-color: var(--cp2);
+                    color: v.$cp1;
+                    background-color: v.$cp2;
                     font-weight: bold;
                     span{
-                        color: var(--cp1);
+                        color: v.$cp1;
                         letter-spacing: .05rem;
                     }
                     .time-left{

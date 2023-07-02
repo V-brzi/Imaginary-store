@@ -1,4 +1,5 @@
-@import 'variables';
+@use 'variables' as v;
+@import 'mixin';
 
 .home{
     display: flex;
@@ -12,15 +13,15 @@
         padding: .2rem .2rem;
         margin-bottom: 2rem;
         width: 65vw;
-        font-size: var(--fs3);
+        @include responsive-fs3 ("font-size");
         text-transform: uppercase;
-        color: var(--cp1);
+        color: v.$cp1;
         font-weight: bold;
         letter-spacing: 4px;
-        text-shadow: -2px 2px 2px var(--cp2),
-        2px 2px 2px var(--cp2),
-        2px -2px 2px var(--cp2),
-        -2px -2px 2px var(--cp2);
+        text-shadow: -2px 2px 2px v.$cp2,
+        2px 2px 2px v.$cp2,
+        2px -2px 2px v.$cp2,
+        -2px -2px 2px v.$cp2;
         animation: home-slide .8s ease-out;
     }
 
@@ -36,7 +37,7 @@
             padding: 3px;
 
             &:hover, &:active, &:focus{
-                border: 6px solid var(--cp2);
+                border: 6px solid v.$cp2;
                 transform: scale(1.1);
                 cursor: pointer;
             }
@@ -84,7 +85,7 @@
                 padding: 2px;
 
                 &:hover, &:active, &:focus{
-                    border: 4px solid var(--cp2);
+                    border: 4px solid v.$cp2;
                 }
             }
         }

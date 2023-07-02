@@ -1,6 +1,8 @@
+@use "styles/variables" as v;
+@import "styles/mixin";
 @import "node_modules/bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import "styles/variables";
+
 
 *{
   box-sizing: border-box;
@@ -9,8 +11,8 @@
 body{
   width: 100vw;
   font-family:Arial, Helvetica, sans-serif;
-  font-size: var(--fs2);
-  color: var(--cp2);
+  @include responsive-fs2 ("font-size");
+  color: v.$cp2;
   margin: 0;
   text-align: center;
 }
@@ -29,7 +31,7 @@ body{
 .store,
 .favorites,
 .cart{
-  height: calc(100vh - var(--navH));
+  @include responsive-height ("height");
   padding-top: 2rem;
 }
 

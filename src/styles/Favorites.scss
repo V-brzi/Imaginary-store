@@ -1,4 +1,5 @@
-@import 'variables';
+@use 'variables' as v;
+@import 'mixin';
 
 .favorites{
     display: flex;
@@ -22,11 +23,11 @@
         text-align: left;
         margin-left: .2rem;
         width: 70%;
-        font-size: var(--fs2);
+        @include responsive-fs2 ("font-size");
 
         .product-title{
-            color: var(--cp3);
-            font-size: var(--fs1);
+            color: v.$cp3;
+            @include responsive-fs1 ("font-size");
         }
 
         .favorites-icons{

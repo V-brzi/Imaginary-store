@@ -1,4 +1,5 @@
-@import 'variables';
+@use 'variables' as v;
+@import 'mixin';
 
 .cart{
     display: flex;
@@ -16,8 +17,8 @@
         .carousel-container{
             align-self: flex-start;
             text-align: center;
-            background-color: var(--cp2);
-            color: var(--cp1);
+            background-color: v.$cp2;
+            color: v.$cp1;
             padding: .5rem 0;
             width: 100%;
 
@@ -54,23 +55,23 @@
 
             .old-price{
                 text-decoration: line-through;
-                color: var(--cp4);
+                color: v.$cp4;
                 margin-top: .5rem;
-                font-size: var(--fs2);
+                @include responsive-fs2 ("font-size");
             }
         
             .new-price{
                 margin-top: .5rem;
                 margin-bottom: 2rem;
-                font-size: var(--fs2);
+                @include responsive-fs2 ("font-size");
             }
         }
 
         .check-out-btn{
             width: fit-content;
             align-self: center;
-            background-color: var(--cp5);
-            color: var(--cp2);
+            background-color: v.$cp5;
+            color: v.$cp2;
             margin-bottom: 2rem;
             border: none;
         }

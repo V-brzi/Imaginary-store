@@ -1,5 +1,5 @@
-@import 'variables';
-
+@use 'variables' as v;
+@import 'mixin';
 .card{
     position: relative;
     width: 260px;
@@ -7,7 +7,7 @@
     padding: 15px 5px 5px 5px;
     margin: 0 auto;
     padding: 1rem 0;
-    font-size: var(--ff1);
+    @include responsive-fs2 ("font-size");
     
     .card-img{
         width:180px;
@@ -22,18 +22,18 @@
     }
 
     .product-title{
-        font-size: var(--fs2);
+        @include responsive-fs2 ("font-size");
     }
 
     .fa-heart{
         top: 15px;
-        color: var(--cp4);
+        color: v.$cp4;
     }
     
     .fa-cart-shopping,
     .fa-opencart{
         top: 50px;
-        color: var(--cp3);
+        color: v.$cp3;
     }
     
     .fa-heart,

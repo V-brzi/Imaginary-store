@@ -1,5 +1,5 @@
 
-@import 'variables';
+@use 'variables' as v;
 
 .l-cont {
     display: flex;
@@ -12,7 +12,7 @@
 
 .sm-cont {
     width: 24rem;
-    color: var(--cp2);
+    color: v.$cp2;
     border-radius: 0.375rem; /* 6px */
     padding: 1.5rem; /* 24px */
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -39,7 +39,7 @@ input {
 
 .btn-colr,
 .btn-disbl {
-    background-color: var(--cp3);
+    background-color: v.$cp3;
     width: 100%;
     border-radius: 0.375rem; /* 6px */
     padding-top: 0.25rem; /* 4px */
@@ -47,13 +47,13 @@ input {
 }
 
 .btn-colr:hover {
-    background-color: var(--cp5); /* Green */
-    color: var(--cp2);
+    background-color: v.$cp5; /* Green */
+    color: v.$cp2;
   }
 
   .btn-sign-out{
-    background-color: var(--cp2);
-    color: var(--cp1);
+    background-color: v.$cp2;
+    color: v.$cp1;
   }
 
   span {

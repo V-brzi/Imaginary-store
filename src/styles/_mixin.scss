@@ -1,29 +1,29 @@
 @mixin responsive-fs1 ($prop){
     #{$prop}: 1.5rem;
-    @media(max-width:520px) or (max-height:470px){
+    @media screen and (max-width:520px), screen and (max-height:470px){
         #{$prop}: 1rem;
     }
-    @media(min-width:1500px){
+    @media screen and (min-width:1500px){
         #{$prop}: 2.5rem;
     }
 }
 
 @mixin responsive-fs2 ($prop){
     #{$prop}: 1.2rem;
-    @media(max-width:520px) or (max-height:470px){
+    @media screen and (max-width:520px), screen and (max-height:470px){
         #{$prop}: .8rem;
     }
-    @media(min-width:1500px){
+    @media screen and (min-width:1500px){
         #{$prop}: 2.2rem;
     }
 }
 
 @mixin responsive-fs3($prop){
     #{$prop}: 2rem;
-    @media(max-width:520px) or (max-height:470px){
+    @media screen and (max-width:520px), screen and (max-height:470px){
         #{$prop}: 1.1rem;
     }
-    @media(min-width:1500px){
+    @media screen and (min-width:1500px){
         #{$prop}: 4rem;
     }
 }
@@ -31,10 +31,10 @@
 
 @mixin responsive-navH ($prop){
     #{$prop}: 70px;
-    @media(max-width:520px) or (max-height:470px){
+    @media screen and (max-width:520px), screen and (max-height:470px){
         #{$prop}: 50px;
     }
-    @media(min-width:1500px){
+    @media screen and (min-width:1500px){
         #{$prop}: 120px;
     }
 }
@@ -42,10 +42,10 @@
 
 @mixin responsive-height ($prop){
     #{$prop}: calc(100vh - 70px);
-    @media(max-width:520px) or (max-height:470px){
+    @media screen and (max-width:520px), screen and (max-height:470px){
         #{$prop}: calc(100vh - 50px);
     }
-    @media(min-width:1500px){
+    @media screen and (min-width:1500px){
         #{$prop}: calc(100vh - 120px);
     }
 }

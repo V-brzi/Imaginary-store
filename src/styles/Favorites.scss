@@ -60,6 +60,11 @@
 @media(max-width:520px){
 
     .favorites{
+
+        .favorite-img{
+            min-width: 140px;
+        }
+        
         .favorites-item{
             width: 90%;
         }
